@@ -23,7 +23,7 @@ header {
     color: #ffffff;
     padding-top: 30px;
     min-height: 70px;
-    border-bottom: #e8491d 3px solid;
+    border-bottom: #f0b501 3px solid;
 }
 
 header a {
@@ -53,7 +53,7 @@ header nav {
 }
 
 header .current a {
-    color: #e8491d;
+    color: #f0b501;
     font-weight: bold;
 }
 
@@ -66,6 +66,17 @@ footer {
     padding: 20px;
     margin-top: 20px;
     color: #ffffff;
-    background-color: #e8491d;
+    background-color: #f0b501;
     text-align: center;
+}
+
+#contactForm {
+    width: 80%;
+    margin: auto;
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+#contactForm h1 {
+    margin: auto;
 }
