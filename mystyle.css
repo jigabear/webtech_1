@@ -81,8 +81,27 @@ footer {
     margin: auto;
 }
 
+input[type=text], textarea {
+  box-sizing: border-box;
+  border: 2px solid #35424a;
+  border-radius: 4px;
+}
+ 
+
 .responsive {
   max-width: 100%;
   max-width: 580px;
   height: auto;
 }
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  padding: 8px;
+}
+
