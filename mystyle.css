@@ -5,7 +5,6 @@ body {
     padding: 0px;
     margin: 0;
     background-color: #f4f4f4;
-
 }
 
 .container {
@@ -15,11 +14,11 @@ body {
     margin: auto;
     overflow: hidden;
 }
-.container img{
+
+.container img {
     float: left;
     margin-right: 10px;
 }
-
 
 ul {
     margin: 0;
@@ -84,41 +83,53 @@ footer {
     overflow: hidden;
 }
 
-#contactForm h1 {
+#contactForm h2 {
     margin: auto;
 }
 
-input[type=text], textarea {
-  box-sizing: border-box;
-  border: 2px solid #35424a;
-  border-radius: 4px;
+input[type=text],
+input[type=email],
+textarea {
+    box-sizing: border-box;
+    border: 2px solid #35424a;
+    border-radius: 4px;
 }
- 
+
 .responsive__image {
-  max-width: 100%;
-  max-width: 580px;
-  height: auto;
+    max-width: 100%;
+    max-width: 580px;
+    height: auto;
 }
+
 table {
-  border-collapse: collapse;
-  width: 100%;
+    border-collapse: collapse;
+    width: 100%;
 }
 
-th, td {
-  text-align: left;
-  border: 2px solid #ddd;
-  padding: 8px;
+th,
+td {
+    text-align: left;
+    border: 2px solid #ddd;
+    padding: 8px;
 }
 
-#furtherreading a:link{
+#furtherreading a:link {
     color: #0033cc;
 }
 
-#furtherreading a:visited{
+#furtherreading a:visited {
     color: purple;
 }
 
-#furtherreading a:hover{
+#furtherreading a:hover {
     color: #0099ff;
 }
 
+#firstname,
+#lastname {
+    margin-left: 25px;
+}
+
+#message {
+    margin-left: 34px;
+}
