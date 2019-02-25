@@ -110,15 +110,15 @@ th, td {
   padding: 8px;
 }
 
-a:link #furtherreading{
+#furtherreading a:link{
     color: #0033cc;
 }
 
-a:visited #furtherreading{
+#furtherreading a:visited{
     color: purple;
 }
 
-a:hover #furtherreading{
+#furtherreading a:hover{
     color: #0099ff;
 }
 
