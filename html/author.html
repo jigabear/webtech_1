@@ -10,8 +10,8 @@
     <title>The wheel of Time: Author</title>
 </head>
 
-<body>
-    <header>
+<body id="body">
+    <header id="header">
         <div class="container">
             <div id="branding">
                 <h1>The Wheel of Time</h1>
@@ -24,12 +24,33 @@
                     <li><a href="furtherreading.html">Further reading</a></li>
                     <li><a href="glossary.html">Glossary</a></li>
                     <li><a href="contact.html">Contact</a></li>
+                    
+                    //Testing kak element
+                    <label for="element-select">Select element:</label>
+                    <select id="element-select">
+                        <option value="">--Please choose an option--</option>
+                        <option value="body">Body</option>
+                        <option value="header">Header</option>
+                        <option value="footer">Footer</option>
+                        <option value="Aside">Aside</option>
+                        <option value="articles">Articles</option>
+                        <option value="section">Section</option>
+                        </select>
+
+                    // Testing kak appearance
+                        <label for="appearance-select">Change appearance:</label>
+                        <select id="appearance-select">
+                            <option value="">--Please choose an option--</option>
+                            <option value="font14", onchange="changeBackgroundColor()">Change background test</option>
+
+                            </select>
                 </ul>
             </nav>
         </div>
+
     </header>
 
-    <section>
+    <section id="section">
         <div class="container">
             <h2>Robert Jordan</h2>
             <img src="../images/authors/robert-jordan.jpg" class="responsive__image" alt="Robert Jordan">
@@ -65,7 +86,7 @@
         </div>
     </section>
 
-    <footer>
+    <footer id="footer">
         <p>Utrecht University &copy; 2019</p>
     </footer>
 
