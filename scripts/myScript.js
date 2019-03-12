@@ -26,7 +26,6 @@ function createOption(name) {
     return optionElement;
 }
 
-// Kiest aan de hand van de values
 var appearanceTypes = {
     fontSizeSmaller: "smaller",
     fontSizeLarger: "larger",
@@ -52,7 +51,7 @@ function getElementsToChange(){
     return elementsToChange;
 }
 
-// maakt element geel (loop om alles te pakken zoals bv. meerdere sections)
+// maakt element blauw (loop om alles te pakken zoals bv. meerdere sections)
 function changeBackgroundColor() {
     var elementsToChange = getElementsToChange();
     for (var index = 0; index < elementsToChange.length; index++) {
