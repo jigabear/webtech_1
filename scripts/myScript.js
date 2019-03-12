@@ -13,15 +13,15 @@ function getSelectedOption(sel) {
             break;
         }
     }
-    Traversing();
+    traversing();
 }
 
-function Traversing() {
+function traversing() {
     var opt = document.getElementsByTagName(opt),
     opt_len = opt.length,
     i,
     alt;
-    for (i=0; i < imxg_len; i++) {
+    for (i=0; i < opt_len; i++) {
     alt = opt[i].getAttribute('alt');
     if (alt) {
     console.log(alt);
