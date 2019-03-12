@@ -2,49 +2,68 @@ function myFunction() {
     document.getElementById("head").innerHTML = "The Wheel of Time";
 }
 
+// Het vullen van de select menu
+function initialize() {
+    var sel = document.getElementById('element-select');
+    
+    var body = document.getElementsByTagName("body");
+    var bodyElement = createOption(body[0].localName);
+    sel.appendChild(bodyElement);
+  
+// Traversing alle elementen onder body
+    for (var index = 0; index < body[0].children.length; index++) {
+        var childElement = body[0].children[index];
+        var optionElement = createOption(childElement.localName);
+        sel.appendChild(optionElement);
+    }
+}
 
-var sel = document.getElementById('element-select');
+// Om een  option element aan te maken in het menu
+function createOption(name) {
+    var optionElement = document.createElement("OPTION");
+    optionElement.value = name;
+    optionElement.innerText = name;
+    return optionElement;
+}
 
-function getSelectedOption(sel) {
-    var opt;
-    for ( var i = 0, len = sel.options.length; i < len; i++ ) {
-        opt = sel.options[i];
-        if ( opt.selected === true ) {
-            break;
+// Kiest aan de hand van de values
+var appearanceTypes = {
+    fontSizeSmaller: "smaller",
+    fontSizeLarger: "larger",
+    color: "color"
+};
+
+// Kiest color of font size aan de hand geselecteerde optie in menu 2
+function changeAppearance(element) {
+    if (element) {
+        var appearanceType = element.value;
+        if (appearanceType === appearanceTypes.color) {
+            changeBackgroundColor();
+        } else {
+            changeFontSize(appearanceType);
         }
     }
-    traversing();
 }
 
-function traversing() {
-    var opt = document.getElementsByTagName(opt),
-    opt_len = opt.length,
-    i,
-    alt;
-    for (i=0; i < opt_len; i++) {
-    alt = opt[i].getAttribute('alt');
-    if (alt) {
-    console.log(alt);
+// Pakt value van geselecteerde optie in menu 1
+function getElementsToChange(){
+    var elementNameToChange = document.getElementById('element-select').value;
+    var elementsToChange = document.getElementsByTagName(elementNameToChange);
+    return elementsToChange;
+}
+
+// maakt element geel (loop om alles te pakken zoals bv. meerdere sections)
+function changeBackgroundColor() {
+    var elementsToChange = getElementsToChange();
+    for (var index = 0; index < elementsToChange.length; index++) {
+        elementsToChange[index].style.backgroundColor = "blue";
     }
-    } 
+}
+
+// verandert font size binnen een element (loop stuff again)
+function changeFontSize(appearanceType) {
+    var elementsToChange = getElementsToChange();
+    for (var index = 0; index < elementsToChange.length; index++) {
+        elementsToChange[index].style.fontSize = appearanceType;
     }
-
-// element blauw maken
-function changeBackgroundColorBlue() {
-    document.getElementById(alt).style.color = "blue";
-}
-
-// element geel maken
-function changeBackgroundColorYellow() {
-    document.getElementById(alt).style.color = "yellow";
-}
-
-// element font size vergroten
-function changeFontSizeLarger() {
-    document.getElementById(alt).style.fontSize = "larger";
-}
-
-// element font size verkleinen
-function changeFontSizeSmaller() {
-    document.getElementById(alt).style.fontSize = "smaller";
 }

@@ -11,7 +11,9 @@
     <title>The wheel of Time: Author</title>
 </head>
 
-<body id="body">
+
+<!--Initialize moet komen omdat body eerst moet laden voordat je de functie kan gebruiken-->
+<body id="body" onload="initialize()">
     <header id="header">
         <div class="container">
             <div id="branding">
@@ -28,23 +30,15 @@
                     
                     <!--Testing kak element-->
                     <label for="element-select">Select element:</label>
-                    <select id="element-select" onchange="getSelectedOption(sel)"" >
-                        <option value="">--Please choose an option--</option>
-                        <option value="body">Body</option>
-                        <option value="header">Header</option>
-                        <option value="footer">Footer</option>
-                        <option value="aside">Aside</option>
-                        <option value="articles">Articles</option>
-                        <option value="section">Section</option>
-                        </select>
+                    <select id="element-select"></select>
 
                     <!--Testing kak appearance-->
                         <label for="element-selected">Change appearance:</label>
-                        <select id="element-selected"> 
+                        <select id="element-selected" onchange="changeAppearance(this)"> 
                             <option value="">--Please choose an option--</option>
-                            <option value="color" onchange="changeBackgroundColor()">Change background color test</option>
-                            <option value="fontsize" onchange="changeFontSize()">Change font size test</option>
-
+                            <option value="color">Blue background</option>
+                            <option value="smaller" >Smaller font size</option>
+                            <option value="larger" >Larger font size</option>
                             </select>
                 </ul>
             </nav>
