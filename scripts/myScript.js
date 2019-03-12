@@ -2,40 +2,49 @@ function myFunction() {
     document.getElementById("head").innerHTML = "The Wheel of Time";
 }
 
-// Copypasta van slides
-var img = document.getElementsByTagName('img'),
-img_len = img.length,
-i,
-alt;
-for (i=0; i < img_len; i++) {
-alt = img[i].getAttribute('alt');
-if (alt) {
-console.log(alt);
-}
-} 
 
-// Element in andere menu gooien? idk fam send halp
-function getSelectElement() {
-    var x = document.getElementById("element-select");
-// document.getElementById("selected-element").innerHTML = x;
-  }
+var sel = document.getElementById('element-select');
+
+function getSelectedOption(sel) {
+    var opt;
+    for ( var i = 0, len = sel.options.length; i < len; i++ ) {
+        opt = sel.options[i];
+        if ( opt.selected === true ) {
+            break;
+        }
+    }
+    Traversing();
+}
+
+function Traversing() {
+    var opt = document.getElementsByTagName(opt),
+    opt_len = opt.length,
+    i,
+    alt;
+    for (i=0; i < imxg_len; i++) {
+    alt = opt[i].getAttribute('alt');
+    if (alt) {
+    console.log(alt);
+    }
+    } 
+    }
 
 // element blauw maken
-function changeBackgroundColor() {
-    document.getElementById("element-select").style.color = "blue";
+function changeBackgroundColorBlue() {
+    document.getElementById(alt).style.color = "blue";
 }
 
 // element geel maken
-function changeBackgroundColor() {
-    document.getElementById("element-select").style.color = "yellow";
+function changeBackgroundColorYellow() {
+    document.getElementById(alt).style.color = "yellow";
 }
 
 // element font size vergroten
-function changeFontSize() {
-    document.getElementById("element-select").style.fontSize = "larger";
+function changeFontSizeLarger() {
+    document.getElementById(alt).style.fontSize = "larger";
 }
 
 // element font size verkleinen
-function changeFontSize() {
-    document.getElementById("element-select").style.fontSize = "smaller";
+function changeFontSizeSmaller() {
+    document.getElementById(alt).style.fontSize = "smaller";
 }
