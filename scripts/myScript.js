@@ -14,11 +14,28 @@ console.log(alt);
 }
 } 
 
+// Element in andere menu gooien? idk fam send halp
+function getSelectElement() {
+    var x = document.getElementById("element-select");
+// document.getElementById("selected-element").innerHTML = x;
+  }
 
-// Body geel maken testing kak pls send halp and nudes
-document.getElementById("body").onchange = function() {changeBackgroundColor()};
-
+// element blauw maken
 function changeBackgroundColor() {
-for (let element of body.children) {
-    element.style.background = 'yellow';
+    document.getElementById("element-select").style.color = "blue";
+}
+
+// element geel maken
+function changeBackgroundColor() {
+    document.getElementById("element-select").style.color = "yellow";
+}
+
+// element font size vergroten
+function changeFontSize() {
+    document.getElementById("element-select").style.fontSize = "larger";
+}
+
+// element font size verkleinen
+function changeFontSize() {
+    document.getElementById("element-select").style.fontSize = "smaller";
 }

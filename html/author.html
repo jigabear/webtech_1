@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="description" content="The Wheel of Time author">
     <meta name="keywords" content="The Wheel of time, book series, Robert Jordan, Brandon Sanderson, author">
+    <script type="text/javascript" src="../scripts/myScript.js"></script>
     <link rel="stylesheet" type="text/css" href="../styles/mystyle.css">
     <meta name="viewport" content="width=device-width">
     <title>The wheel of Time: Author</title>
@@ -25,23 +26,24 @@
                     <li><a href="glossary.html">Glossary</a></li>
                     <li><a href="contact.html">Contact</a></li>
                     
-                    //Testing kak element
+                    <!--Testing kak element-->
                     <label for="element-select">Select element:</label>
                     <select id="element-select">
                         <option value="">--Please choose an option--</option>
                         <option value="body">Body</option>
                         <option value="header">Header</option>
                         <option value="footer">Footer</option>
-                        <option value="Aside">Aside</option>
+                        <option value="aside">Aside</option>
                         <option value="articles">Articles</option>
                         <option value="section">Section</option>
                         </select>
 
-                    // Testing kak appearance
-                        <label for="appearance-select">Change appearance:</label>
-                        <select id="appearance-select">
+                    <!--Testing kak appearance-->
+                        <label for="element-selected">Change appearance:</label>
+                        <select id="element-selected"> 
                             <option value="">--Please choose an option--</option>
-                            <option value="font14", onchange="changeBackgroundColor()">Change background test</option>
+                            <option value="color" onchange="changeBackgroundColor()">Change background color test</option>
+                            <option value="color" onchange="changeFontSize()">Change font size test</option>
 
                             </select>
                 </ul>
