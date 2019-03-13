@@ -7,11 +7,12 @@
     <meta name="keywords" content="The Wheel of time, book series, Robert Jordan, Brandon Sanderson, glossary, terminology">
     <link rel="stylesheet" type="text/css" href="../styles/mystyle.css">
     <meta name="viewport" content="width=device-width">
+    <script type="text/javascript" src="../scripts/myScript.js"></script>
     <title>The wheel of Time: Glossary</title>
 </head>
 
-<body>
-    <header>
+<body id="body" onload="initialize()">
+    <header id="header">
         <div class="container">
             <div id="branding">
                 <h1>The Wheel of Time</h1>
@@ -24,6 +25,22 @@
                     <li><a href="furtherreading.html">Further reading</a></li>
                     <li class="current"><a href="glossary.html">Glossary</a></li>
                     <li><a href="contact.html">Contact</a></li>
+
+                    <!--Create first menu-->
+                    <label for="elementSelect">Select element:</label>
+                    <select id="elementSelect"></select>
+
+                    <!--Create color picker-->
+                    <label for="colorSelect">Select color: <input type="color" id="colorPicker" value="#fdffff" onchange="changeBackgroundColor()"></label>
+
+                    <!--Create second menu-->
+                    <label for="elementSelected">Change appearance:</label>
+                    <select id="elementSelected" onchange="changeAppearance(this)"> 
+                            <option value="">--Please choose an option--</option>
+                            <option value="color">Change color</option>
+                            <option value="smaller" >Smaller font size</option>
+                            <option value="larger" >Larger font size</option>
+                    </select>
                 </ul>
             </nav>
         </div>
@@ -142,7 +159,7 @@
         </div>
     </section>
 
-    <footer>
+    <footer id="footer">
         <p>Utrecht University &copy; 2019</p>
     </footer>
 
