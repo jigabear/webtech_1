@@ -13,6 +13,7 @@
 
 
 <!--Initialize moet komen omdat body eerst moet laden voordat je de functie kan gebruiken-->
+
 <body id="body" onload="initialize()">
     <header id="header">
         <div class="container">
@@ -27,19 +28,23 @@
                     <li><a href="furtherreading.html">Further reading</a></li>
                     <li><a href="glossary.html">Glossary</a></li>
                     <li><a href="contact.html">Contact</a></li>
-                    
+
                     <!--Testing kak element-->
                     <label for="element-select">Select element:</label>
                     <select id="element-select"></select>
 
+                    <label for="colorSelect">Select color: <input type="color" id="colorpicker" value="#f4f4f4"></label>
+
                     <!--Testing kak appearance-->
-                        <label for="element-selected">Change appearance:</label>
-                        <select id="element-selected" onchange="changeAppearance(this)"> 
+                    <label for="element-selected">Change appearance:</label>
+                    <select id="element-selected" onchange="changeAppearance(this)"> 
                             <option value="">--Please choose an option--</option>
-                            <option value="color">Blue background</option>
+                            <option value="color">Change color</option>
                             <option value="smaller" >Smaller font size</option>
                             <option value="larger" >Larger font size</option>
-                            </select>
+                    </select>
+
+
                 </ul>
             </nav>
         </div>

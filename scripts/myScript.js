@@ -1,16 +1,12 @@
-function myFunction() {
-    document.getElementById("head").innerHTML = "The Wheel of Time";
-}
-
 // Het vullen van de select menu
 function initialize() {
     var sel = document.getElementById('element-select');
-    
+
     var body = document.getElementsByTagName("body");
     var bodyElement = createOption(body[0].localName);
     sel.appendChild(bodyElement);
-  
-// Traversing alle elementen onder body
+
+    // Traversing alle elementen onder body
     for (var index = 0; index < body[0].children.length; index++) {
         var childElement = body[0].children[index];
         var optionElement = createOption(childElement.localName);
@@ -45,7 +41,7 @@ function changeAppearance(element) {
 }
 
 // Pakt value van geselecteerde optie in menu 1
-function getElementsToChange(){
+function getElementsToChange() {
     var elementNameToChange = document.getElementById('element-select').value;
     var elementsToChange = document.getElementsByTagName(elementNameToChange);
     return elementsToChange;
@@ -55,7 +51,7 @@ function getElementsToChange(){
 function changeBackgroundColor() {
     var elementsToChange = getElementsToChange();
     for (var index = 0; index < elementsToChange.length; index++) {
-        elementsToChange[index].style.backgroundColor = "blue";
+        elementsToChange[index].style.backgroundColor = document.getElementById('colorpicker').value;
     }
 }
 
