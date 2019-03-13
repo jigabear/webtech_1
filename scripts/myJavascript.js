@@ -1,8 +1,8 @@
-function book(){
+function book() {
     document.getElementById("bookDetails").addEventListener("load", eyeOfTheWorld.showInfo(), false);
     document.getElementById("bookDetails").addEventListener("load", wheelOfTime.showBookTitle(), true);
 }
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("DOMContentLoaded", function() {
     book();
     productDetails();
     amazonWindowChange();
@@ -11,43 +11,43 @@ document.addEventListener("DOMContentLoaded", function(){
 })
 
 class Book {
-    constructor (name, author){
+    constructor(name, author) {
         this.name = name;
         this.author = author;
 
-        this.showInfo = function(){
+        this.showInfo = function() {
             var para = document.createElement("P");
             var t = document.createTextNode(this.name + " was written by " + this.author + ". The Eye of The World is the first book in the The Wheel of Time series. It debuted in 1990, and it has been first on the list of New York Times bestselling authors.");
             para.appendChild(t);
             document.getElementById("bookDetails").appendChild(para);
         };
 
-        this.showBookTitle = function(){
+        this.showBookTitle = function() {
             var titleHeader = document.createElement("h1");
             var titleText = document.createTextNode(this.name);
             titleHeader.appendChild(titleText);
             document.getElementById("branding").appendChild(titleHeader);
         };
-        
+
     }
 }
 
-function productDetails(){
+function productDetails() {
     document.getElementById("ProductDetails").addEventListener("load", theEyeOfTheWorld.createProductList(), false);
 }
 
 
 class ProductDetails extends Book {
-    constructor(name, author, genre, pages, isbn, publisher){
+    constructor(name, author, genre, pages, isbn, publisher) {
         super(name, author);
         this.genre = genre;
         this.pages = pages;
         this.isbn = isbn;
         this.publisher = publisher;
 
-        
+
         //Function to create a list with product details.
-        this.createProductList = function(){
+        this.createProductList = function() {
             //Create an unordered list.
             var x = document.createElement("UL");
             //Give the unordered list an ID.
@@ -56,19 +56,19 @@ class ProductDetails extends Book {
             document.getElementById("productDetails").appendChild(x);
             //Append to a listContainer div, to make the list take on the same conditions as the container div.
             // document.getElementById("listContainer").appendChild(x);
-          
+
             //Create list item for the book title.
             var listName = document.createElement("LI");
-            var textName = document.createTextNode("Title: "+ this.name);
+            var textName = document.createTextNode("Title: " + this.name);
             listName.appendChild(textName);
             document.getElementById("myUL").appendChild(listName);
-          
+
             //Create list item for the book author.
             var listAuthor = document.createElement("LI");
             var textAuthor = document.createTextNode("Author: " + this.author);
             listAuthor.appendChild(textAuthor);
             document.getElementById("myUL").appendChild(listAuthor);
-          
+
             //Create list item for the book genre.
             var listGenre = document.createElement("LI");
             var textGenre = document.createTextNode("Genre: " + this.genre);
@@ -96,19 +96,19 @@ class ProductDetails extends Book {
     }
 }
 
-function author(){
+function author() {
     document.getElementById("authordiv").addEventListener("load", authorBook.createAuthorDetails(), false);
 }
 
 
 
-class AuthorDetails extends Book{
-    constructor(name, author, series, birthdate){
+class AuthorDetails extends Book {
+    constructor(name, author, series, birthdate) {
         super(name, author);
         this.series = series;
         this.birthdate = birthdate;
 
-        this.createAuthorDetails = function(){
+        this.createAuthorDetails = function() {
             var p = document.createElement("P")
             var authorText = document.createTextNode(this.author + " is the author of the popular series by the name of " + this.series + ", of which the first book he wrote is " + this.name + ". " + this.author + " was born on " + this.birthdate + ". ");
             var authorText2 = document.createTextNode("He was born in Charleston, South Carolina. He learnt how to read when he was four, aided by his brother who was twelve years older. Robert has served in the U.S. Army, and he began writing in 1977. 13 years after he started writing, he released the first book in his bestseller The Wheel of Time.");
@@ -119,24 +119,24 @@ class AuthorDetails extends Book{
     }
 }
 
-function amazonWindowChange(){
+function amazonWindowChange() {
     document.getElementById("openAmazon").addEventListener("click", amazonInNewTab);
 }
 
-function authorWindowChange(){
+function authorWindowChange() {
     document.getElementById("authorBio").addEventListener("click", authorInNewTab);
 }
 
 
-function amazonInNewTab(){
+function amazonInNewTab() {
     var amazonUrl = "https://www.amazon.com/Eye-World-Wheel-Time-Book/dp/0812511816";
     var win = window.open(amazonUrl, "_blank");
     win.focus();
 }
 
-function authorInNewTab(){
+function authorInNewTab() {
     var authorUrl = "author.html";
-    var win = window.open(authorUrl, "_blank");
+    var win = window.open(authorUrl, "_parent");
     win.focus();
 }
 
@@ -144,5 +144,3 @@ wheelOfTime = new Book("The Wheel of Time", "Robert Jordan");
 eyeOfTheWorld = new Book("The Eye of The World", "Robert Jordan");
 theEyeOfTheWorld = new ProductDetails("The Eye of The World", "Robert Jordan", "Fantasy Novel", "832 (Paperback)", "978-0812511819", "Tor Fantasy, November 15, 1990");
 authorBook = new AuthorDetails("The Eye of The World", "Robert Jordan", "The Wheel of Time", "October 17, 1948");
-
-

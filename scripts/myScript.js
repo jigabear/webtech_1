@@ -1,4 +1,4 @@
-// Het vullen van de select menu
+// Populating the first select menu
 function initialize() {
     var sel = document.getElementById('elementSelect');
 
@@ -6,7 +6,7 @@ function initialize() {
     var bodyElement = createOption(body[0].localName);
     sel.appendChild(bodyElement);
 
-    // Traversing alle elementen onder body
+    // Traversing all elements under body
     for (var index = 0; index < body[0].children.length; index++) {
         var childElement = body[0].children[index];
         var optionElement = createOption(childElement.localName);
@@ -14,7 +14,7 @@ function initialize() {
     }
 }
 
-// Om een  option element aan te maken in het menu
+// Create option in the menu
 function createOption(name) {
     var optionElement = document.createElement("OPTION");
     optionElement.value = name;
@@ -28,7 +28,7 @@ var appearanceTypes = {
     color: "color"
 };
 
-// Kiest color of font size aan de hand geselecteerde optie in menu 2
+// Chooses color of font size based on selection in the second menu
 function changeAppearance(element) {
     if (element) {
         var appearanceType = element.value;
@@ -40,14 +40,14 @@ function changeAppearance(element) {
     }
 }
 
-// Pakt value van geselecteerde optie in menu 1
+// Gets value from selected option in the first menu
 function getElementsToChange() {
     var elementNameToChange = document.getElementById('elementSelect').value;
     var elementsToChange = document.getElementsByTagName(elementNameToChange);
     return elementsToChange;
 }
 
-// maakt element blauw (loop om alles te pakken zoals bv. meerdere sections)
+// Changes color of the element (loop in order to deal with several element (e.g. several sections)
 function changeBackgroundColor() {
     var elementsToChange = getElementsToChange();
     for (var index = 0; index < elementsToChange.length; index++) {
@@ -55,7 +55,7 @@ function changeBackgroundColor() {
     }
 }
 
-// verandert font size binnen een element (loop stuff again)
+// Changes font size of a element (loop in order to deal with several element (e.g. several sections)
 function changeFontSize(appearanceType) {
     var elementsToChange = getElementsToChange();
     for (var index = 0; index < elementsToChange.length; index++) {

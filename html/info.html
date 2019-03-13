@@ -1,43 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="description" content="Information about The Wheel of Time">
-        <meta name="keywords" content="The Wheel of Time, book series, Robert Jordan, Brandon Sanderson, information, short bio">
-        <script type="text/javascript" src="../scripts/myJavascript.js"></script>
-        <link rel="stylesheet" type="text/css" href="../styles/mystyle.css">
-        <script type="text/javascript" src="../scripts/myScript.js"></script>
-        <meta name="viewport" content="width=device-width">
-        <title>Information about The Eye of The World</title>
-        
-    </head>
-    <!-- Need to create an event listener here still: Load title & short description of the book upon loading the page. -->
-    <body id = "body">
-        <header id= "header">
-            <div class="container">
-                <div id="branding">
-                    <h1></h1>
-                </div>
-                <nav>
-                    <ul>
-                            <li class="current"><a href="info.html">Info</a></li>    
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="characters.html">Characters</a></li>
-                            <li><a href="author.html">Author</a></li>
-                            <li><a href="furtherReading.html">Further reading</a></li>
-                            <li><a href="glossary.html">Glossary</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </nav>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Information about The Wheel of Time">
+    <meta name="keywords" content="The Wheel of Time, book series, Robert Jordan, Brandon Sanderson, information, short bio">
+    <script type="text/javascript" src="../scripts/myJavascript.js"></script>
+    <link rel="stylesheet" type="text/css" href="../styles/mystyle.css">
+    <script type="text/javascript" src="../scripts/myScript.js"></script>
+    <meta name="viewport" content="width=device-width">
+    <title>Information about The Eye of The World</title>
+</head>
+
+<body id="body" onload="initialize()">
+    <header id="header">
+        <div class="container">
+            <div id="branding">
+                <h1></h1>
             </div>
-        </header>
-        
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="current"><a href="info.html">Info</a></li>
+                    <li><a href="characters.html">Characters</a></li>
+                    <li><a href="author.html">Author</a></li>
+                    <li><a href="furtherReading.html">Further reading</a></li>
+                    <li><a href="glossary.html">Glossary</a></li>
+
+                    <!--Create first menu-->
+                    <label for="elementSelect">Select element:</label>
+                    <select id="elementSelect"></select>
+
+                    <!--Create second menu-->
+                    <label for="elementSelected">Change appearance:</label>
+                    <select id="elementSelected" onchange="changeAppearance(this)"> 
+                            <option value="">--Please choose an option--</option>
+                            <option value="color">Change color</option>
+                            <option value="smaller" >Smaller font size</option>
+                            <option value="larger" >Larger font size</option>
+                    </select>
+
+                    <!--Create color picker-->
+                    <label for="colorSelect">Select color: <input type="color" id="colorPicker" value="#f4f4f4" onchange="changeBackgroundColor()"></label>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
     <div class="container">
         <!-- Using the "reskinLink" div id to make the javascript-generated links appear clickable when you hover over the links. These are for headers. -->
         <div id="reskinLink">
-        <section>
-                <p><h1 id="openAmazon">The Eye of the World (The Wheel of Time, Book 1)</h1></p>
-        </section>
+            <section>
+                <p>
+                    <h1 id="openAmazon">The Eye of the World (The Wheel of Time, Book 1)</h1>
+                </p>
+            </section>
         </div>
         <br>
 
@@ -47,23 +64,28 @@
 
         <!-- Section tag used to determine location, showing product details. This is through the createProductList() method, generated upon clicking a button. -->
         <article id="productDetails">
-            <p><h1 id="ProductDetails">Product details</h1></p>
+            <p>
+                <h1 id="ProductDetails">Product details</h1>
+            </p>
         </article>
         <br>
         <!-- Div tag used to determine location, showing details of the author. This is through the createAuthorDetails() method, generated upon clicking a button. -->
-        <div id = "authordiv"> 
+        <div id="authordiv">
             <section>
                 <div id="reskinLink">
-                <p><h1 id="authorBio">Author bio</h1></p>
+                    <p>
+                        <h1 id="authorBio">Author bio</h1>
+                    </p>
                 </div>
-            <section>
+                <section>
         </div>
 
     </div>
 
-        <footer id="footer">
-                <p>Utrecht University &copy; 2019</p>
-        </footer>
+    <footer id="footer">
+        <p>Utrecht University &copy; 2019</p>
+    </footer>
 
-    </body>
+</body>
+
 </html>
