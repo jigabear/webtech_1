@@ -1,38 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Information about The Eye of The World</title>
-        <script type="text/javascript" src="../scripts/myJavascript.js"></script>
-        <link rel="stylesheet" type="text/css" href="../styles/mystyle.css">
-    </head>
-    <!-- Need to create an event listener here still: Load title & short description of the book upon loading the page. -->
-    <body>
-        <header>
-            <div class="container">
-                <div id="branding">
-                    <h1></h1>
-                </div>
-                <nav>
-                    <ul>
-                            <li class="current"><a href="infoMarco.html">Info</a></li>    
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="characters.html">Characters</a></li>
-                            <li><a href="author.html">Author</a></li>
-                            <li><a href="furtherreading.html">Further reading</a></li>
-                            <li><a href="glossary.html">Glossary</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </nav>
+
+<head>
+    <meta charset="utf-8">
+    <title>Information about The Eye of The World</title>
+    <script type="text/javascript" src="../scripts/myJavascript.js"></script>
+    <link rel="stylesheet" type="text/css" href="../styles/myStyle.css">
+</head>
+<!-- Need to create an event listener here still: Load title & short description of the book upon loading the page. -->
+
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1></h1>
             </div>
-        </header>
-        
+            <nav>
+                <ul>
+                    <li class="current"><a href="infoMarco.html">Info</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="characters.html">Characters</a></li>
+                    <li><a href="author.html">Author</a></li>
+                    <li><a href="furtherReading.html">Further reading</a></li>
+                    <li><a href="glossary.html">Glossary</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
     <div class="container">
         <!-- Using the "reskinLink" div id to make the javascript-generated links appear clickable when you hover over the links. These are for headers. -->
         <div id="reskinLink">
-        <section>
-                <p><h1 id="openAmazon">The Eye of the World (The Wheel of Time, Book 1)</h1></p>
-        </section>
+            <section>
+                <p>
+                    <h1 id="openAmazon">The Eye of the World (The Wheel of Time, Book 1)</h1>
+                </p>
+            </section>
         </div>
         <br>
 
@@ -46,17 +50,18 @@
         </article>
         <br>
         <!-- Div tag used to determine location, showing details of the author. This is through the createAuthorDetails() method, generated upon clicking a button. -->
-        <div id = "authordiv"> 
+        <div id="authordiv">
             <section>
                 <p id="openAuthor"><button id="authorButton">Cick here for author details</button></p>
-            <section>
+                <section>
         </div>
 
     </div>
 
-        <footer>
-                <p>Utrecht University &copy; 2019</p>
-        </footer>
+    <footer>
+        <p>Utrecht University &copy; 2019</p>
+    </footer>
 
-    </body>
+</body>
+
 </html>
