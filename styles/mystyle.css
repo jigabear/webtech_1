@@ -145,3 +145,21 @@ td {
 #section { 
     display: block;
   }
+
+#reskinLink h1 {
+    cursor: pointer;
+    color: black;
+    text-decoration: underline;
+}
+
+#listContainer {
+    width: 100%;
+}
+
+#bookInfo {
+    width:100%
+}
+
+#author {
+    width: 100%;
+}
