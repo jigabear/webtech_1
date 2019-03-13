@@ -7,11 +7,12 @@
         <link rel="stylesheet" type="text/css" href="../styles/mystyle.css">
     </head>
 
-    <body>
+    <!-- Need to create an event listener here still: Load title & short description of the book upon loading the page. -->
+    <body id="body" onload="eyeOfTheWorld.showInfo(), wheelOfTime.showBookTitle()">
         <header>
             <div class="container">
                 <div id="branding">
-                    <h1>The Wheel of Time</h1>
+                    <h1></h1>
                 </div>
                 <nav>
                     <ul>
@@ -26,13 +27,36 @@
                 </nav>
             </div>
         </header>
-        <div class="container">
+        
+    <div class="container">
+        <!-- Using the "reskinLink" div id to make the javascript-generated links appear clickable when you hover over the links. These are for headers. -->
+        <div id="reskinLink">
         <section>
-                <h1 id="firstHeader">Information about the book</h1>
-        <p><a id="clickableLink" href="https://en.wikipedia.org/wiki/The_Eye_of_the_World">The Eye of The World</a></p>
-        <button onclick="eyeOfTheWorld.createProductList()">Show product details</button>
-        </section>
+                <h1 onclick = "amazonInNewTab()">The Eye of the World (The Wheel of Time, Book 1)</h1>
         </div>
+        <br>
+        </section>
 
+        <!-- Article tag used to determine location, showing details of the book. This is through the showInfo() method, loaded upon loading the page itself. -->
+        <article id="bookDetails">
+        </article>
+
+        <!-- Section tag used to determine location, showing product details. This is through the createProductList() method, generated upon clicking a button. -->
+        <section id="productDetails">
+            <div id="listContainer">
+        <button onclick="eyeOfTheWorld.createProductList()">Show product details</button>
+            </div>
+        </section>
+        <br>
+        <!-- Div tag used to determine location, showing details of the author. This is through the createAuthorDetails() method, generated upon clicking a button. -->
+        <button id ="myButton" onclick="authorBook.createAuthorDetails()">Show author info</button>
+            <div id="author">
+            </div>
+
+    </div>
+
+        <footer>
+                <p>Utrecht University &copy; 2019</p>
+        </footer>
     </body>
 </html>

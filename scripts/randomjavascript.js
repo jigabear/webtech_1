@@ -4,12 +4,20 @@ class Book {
         this.author = author;
         this.showInfo = function(){
             var para = document.createElement("P");
-            var t = document.createTextNode(this.name + " was written by " + this.author + ".");
+            var t = document.createTextNode(this.name + " was written by " + this.author + ". The Eye of The World is the first book in the The Wheel of Time series. It debuted in 1990, and it has been first on the list of New York Times bestselling authors.");
             para.appendChild(t);
-            document.body.appendChild(para);
+            document.getElementById("bookDetails").appendChild(para);
+        };
+
+        this.showBookTitle = function(){
+            var titleHeader = document.createElement("h1");
+            var titleText = document.createTextNode(this.name);
+            titleHeader.appendChild(titleText);
+            document.getElementById("branding").appendChild(titleHeader);
         };
     }
 }
+
 
 class ProductDetails extends Book {
     constructor(name, author, genre, pages, isbn, publisher){
@@ -19,19 +27,20 @@ class ProductDetails extends Book {
         this.isbn = isbn;
         this.publisher = publisher;
 
-
         //Function to create a list with product details.
         this.createProductList = function(){
             //Create an unordered list.
             var x = document.createElement("UL");
             //Give the unordered list an ID.
             x.setAttribute("id", "myUL");
-            //Append unordered list to page.
-            document.body.appendChild(x);
+            //Append unordered list to a section.
+            document.getElementById("productDetails").appendChild(x);
+            //Append to a listContainer div, to make the list take on the same conditions as the container div.
+            // document.getElementById("listContainer").appendChild(x);
           
             //Create list item for the book title.
             var listName = document.createElement("LI");
-            var textName = document.createTextNode("Title: " + this.name);
+            var textName = document.createTextNode("Title: "+ this.name);
             listName.appendChild(textName);
             document.getElementById("myUL").appendChild(listName);
           
@@ -64,15 +73,37 @@ class ProductDetails extends Book {
             var textPublisher = document.createTextNode("Publisher: " + this.publisher);
             listPublisher.appendChild(textPublisher)
             document.getElementById("myUL").appendChild(listPublisher);
-
-
         };
     }
 }
 
-//Instantiate the ProductDetails class.
-eyeOfTheWorld = new ProductDetails("<b> The Eye of The World </b>", "Robert Jordan", "Fantasy Novel", "832 (Paperback)", "978-0812511819", "Tor Fantasy, November 15, 1990");
+class AuthorDetails extends Book{
+    constructor(name, author, series, birthdate){
+        super(name, author);
+        this.series = series;
+        this.birthdate = birthdate;
 
+        this.createAuthorDetails = function(){
+            var p = document.createElement("P")
+            var authorText = document.createTextNode(this.author + " is the author of the popular series by the name of " + this.series + ", of which the first book he wrote is " + this.name + ". " + this.author + " was born on " + this.birthdate + ". ");
+            var authorText2 = document.createTextNode("He was born in Charleston, South Carolina. He learnt how to read when he was four, aided by his brother who was twelve years older. Robert has served in the U.S. Army, and he began writing in 1977. 13 years after he started writing, he released the first book in his bestseller The Wheel of Time.");
+            p.appendChild(authorText);
+            p.appendChild(authorText2);
+            document.getElementById("author").appendChild(p);
+        };
+    }
+}
+
+function amazonInNewTab(){
+    var amazonUrl = "https://www.amazon.com/Eye-World-Wheel-Time-Book/dp/0812511816";
+    var win = window.open(amazonUrl, "_blank");
+    win.focus();
+}
+
+wheelOfTime = new Book("The Wheel of Time", "Robert Jordan");
+eyeOfTheWorld = new Book("The Eye of The World", "Robert Jordan");
+eyeOfTheWorld = new ProductDetails("The Eye of The World", "Robert Jordan", "Fantasy Novel", "832 (Paperback)", "978-0812511819", "Tor Fantasy, November 15, 1990");
+authorBook = new AuthorDetails("The Eye of The World", "Robert Jordan", "The Wheel of Time", "October 17, 1948");
 
 
 
