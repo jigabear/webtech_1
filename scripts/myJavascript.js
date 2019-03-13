@@ -1,6 +1,6 @@
 function book(){
-    document.getElementById("bookDetails").addEventListener("load", eyeOfTheWorld.showInfo());
-    document.getElementById("bookDetails").addEventListener("load", wheelOfTime.showBookTitle());
+    document.getElementById("bookDetails").addEventListener("load", eyeOfTheWorld.showInfo(), false);
+    document.getElementById("bookDetails").addEventListener("load", wheelOfTime.showBookTitle(), true);
 }
 document.addEventListener("DOMContentLoaded", function(){
     book();
@@ -28,6 +28,14 @@ class Book {
     }
 }
 
+function productDetails(){
+    document.getElementById("productDetails").addEventListener("click", theEyeOfTheWorld.createProductList(), false);
+}
+document.addEventListener("DOMContentLoaded", function(){
+    productDetails();
+})
+
+
 class ProductDetails extends Book {
     constructor(name, author, genre, pages, isbn, publisher){
         super(name, author);
@@ -36,6 +44,7 @@ class ProductDetails extends Book {
         this.isbn = isbn;
         this.publisher = publisher;
 
+        
         //Function to create a list with product details.
         this.createProductList = function(){
             //Create an unordered list.
@@ -87,12 +96,9 @@ class ProductDetails extends Book {
 }
 
 function author(){
-    document.getElementById("author").addEventListener("load", authorBook.createAuthorDetails());
+    var a = document.getElementById("authorButton");
+    a.addEventListener("click", createAuthorDetails);
 }
-
-document.addEventListener("DOMContentLoaded", function() {
-    author();
-})
 
 class AuthorDetails extends Book{
     constructor(name, author, series, birthdate){
@@ -106,10 +112,17 @@ class AuthorDetails extends Book{
             var authorText2 = document.createTextNode("He was born in Charleston, South Carolina. He learnt how to read when he was four, aided by his brother who was twelve years older. Robert has served in the U.S. Army, and he began writing in 1977. 13 years after he started writing, he released the first book in his bestseller The Wheel of Time.");
             p.appendChild(authorText);
             p.appendChild(authorText2);
-            document.getElementById("author").appendChild(p);
+            document.getElementById("openAuthor").appendChild(p);
         };
     }
 }
+
+function sectionChange(){
+    document.getElementById("openAmazon").addEventListener("click", amazonInNewTab);
+}
+document.addEventListener("DOMContentLoaded", function(){
+    sectionChange();
+})
 
 function amazonInNewTab(){
     var amazonUrl = "https://www.amazon.com/Eye-World-Wheel-Time-Book/dp/0812511816";
@@ -119,7 +132,7 @@ function amazonInNewTab(){
 
 wheelOfTime = new Book("The Wheel of Time", "Robert Jordan");
 eyeOfTheWorld = new Book("The Eye of The World", "Robert Jordan");
-eyeOfTheWorld = new ProductDetails("The Eye of The World", "Robert Jordan", "Fantasy Novel", "832 (Paperback)", "978-0812511819", "Tor Fantasy, November 15, 1990");
+theEyeOfTheWorld = new ProductDetails("The Eye of The World", "Robert Jordan", "Fantasy Novel", "832 (Paperback)", "978-0812511819", "Tor Fantasy, November 15, 1990");
 authorBook = new AuthorDetails("The Eye of The World", "Robert Jordan", "The Wheel of Time", "October 17, 1948");
 
 
