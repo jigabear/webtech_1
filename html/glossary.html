@@ -7,7 +7,7 @@
     <meta name="keywords" content="The Wheel of time, book series, Robert Jordan, Brandon Sanderson, glossary, terminology">
     <link rel="stylesheet" type="text/css" href="../styles/myStyle.css">
     <meta name="viewport" content="width=device-width">
-    <script type="text/javascript" src="../scripts/myScript.js"></script>
+    <script src="../scripts/myScript.js"></script>
     <title>The wheel of Time: Glossary</title>
 </head>
 
@@ -27,20 +27,26 @@
                     <li class="current"><a href="glossary.html">Glossary</a></li>
 
                     <!--Create first menu-->
-                    <label for="elementSelect">Select element:</label>
-                    <select id="elementSelect"></select>
+                    <li>
+                        <label for="elementSelect">Select element:</label>
+                        <select id="elementSelect"></select>
+                    </li>
 
                     <!--Create second menu-->
-                    <label for="elementSelected">Change appearance:</label>
-                    <select id="elementSelected" onchange="changeAppearance(this)"> 
-                            <option value="">--Please choose an option--</option>
-                            <option value="color">Change color</option>
-                            <option value="smaller" >Smaller font size</option>
-                            <option value="larger" >Larger font size</option>
-                    </select>
+                    <li>
+                        <label for="elementSelected">Select change:</label>
+                        <select id="elementSelected" onchange="changeAppearance(this)"> 
+                                <option value="">--Please choose an option--</option>
+                                <option value="color">Change color</option>
+                                <option value="smaller" >Smaller font size</option>
+                                <option value="larger" >Larger font size</option>
+                            </select>
+                    </li>
 
                     <!--Create color picker-->
-                    <label for="colorSelect">Select color: <input type="color" id="colorPicker" value="#fdffff" onchange="changeBackgroundColor()"></label>
+                    <li>
+                        <label for="colorSelect">Select color: <input type="color" id="colorSelect" value="#f4f4f4" onchange="changeBackgroundColor()"></label>
+                    </li>
                 </ul>
             </nav>
         </div>
