@@ -31,7 +31,7 @@
         <!-- Using the "reskinLink" div id to make the javascript-generated links appear clickable when you hover over the links. These are for headers. -->
         <div id="reskinLink">
         <section>
-                <h1 onclick = "amazonInNewTab()">The Eye of the World (The Wheel of Time, Book 1)</h1>
+                <p><h1 id="openAmazon">The Eye of the World (The Wheel of Time, Book 1)</h1></p>
         </section>
         </div>
         <br>
@@ -41,18 +41,18 @@
         </article>
 
         <!-- Section tag used to determine location, showing product details. This is through the createProductList() method, generated upon clicking a button. -->
-        <section id="productDetails">
-            <div id="listContainer">
-        <button id="myButton1" onclick="eyeOfTheWorld.createProductList()">Show product details</button>
-            </div>
-        </section>
+        <article id="productDetails">
+            <p><button id="test2">Show product</button></p>
+        </article>
         <br>
         <!-- Div tag used to determine location, showing details of the author. This is through the createAuthorDetails() method, generated upon clicking a button. -->
-        <button id ="myButton2" onclick="authorBook.createAuthorDetails()">Show author info</button>
-            <div id="author">
-            </div>
+        <div id = "authordiv"> 
+            <section>
+                <p id="openAuthor"><button id="authorButton">Cick here for author details</button></p>
+            <section>
+        </div>
+
     </div>
-    <button id="testButton">Test</button>
 
         <footer>
                 <p>Utrecht University &copy; 2019</p>
