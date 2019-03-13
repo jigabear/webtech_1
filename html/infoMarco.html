@@ -3,12 +3,11 @@
     <head>
         <meta charset="utf-8">
         <title>Information about The Eye of The World</title>
-        <script type="text/javascript" src="../scripts/randomjavascript.js"></script>
+        <script type="text/javascript" src="../scripts/myJavascript.js"></script>
         <link rel="stylesheet" type="text/css" href="../styles/mystyle.css">
     </head>
-
     <!-- Need to create an event listener here still: Load title & short description of the book upon loading the page. -->
-    <body id="body" onload="eyeOfTheWorld.showInfo(), wheelOfTime.showBookTitle()">
+    <body>
         <header>
             <div class="container">
                 <div id="branding">
@@ -33,9 +32,9 @@
         <div id="reskinLink">
         <section>
                 <h1 onclick = "amazonInNewTab()">The Eye of the World (The Wheel of Time, Book 1)</h1>
+        </section>
         </div>
         <br>
-        </section>
 
         <!-- Article tag used to determine location, showing details of the book. This is through the showInfo() method, loaded upon loading the page itself. -->
         <article id="bookDetails">
@@ -44,19 +43,20 @@
         <!-- Section tag used to determine location, showing product details. This is through the createProductList() method, generated upon clicking a button. -->
         <section id="productDetails">
             <div id="listContainer">
-        <button onclick="eyeOfTheWorld.createProductList()">Show product details</button>
+        <button id="myButton1" onclick="eyeOfTheWorld.createProductList()">Show product details</button>
             </div>
         </section>
         <br>
         <!-- Div tag used to determine location, showing details of the author. This is through the createAuthorDetails() method, generated upon clicking a button. -->
-        <button id ="myButton" onclick="authorBook.createAuthorDetails()">Show author info</button>
+        <button id ="myButton2" onclick="authorBook.createAuthorDetails()">Show author info</button>
             <div id="author">
             </div>
-
     </div>
+    <button id="testButton">Test</button>
 
         <footer>
                 <p>Utrecht University &copy; 2019</p>
         </footer>
+
     </body>
 </html>
