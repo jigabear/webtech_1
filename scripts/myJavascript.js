@@ -4,6 +4,10 @@ function book(){
 }
 document.addEventListener("DOMContentLoaded", function(){
     book();
+    productDetails();
+    amazonWindowChange();
+    authorWindowChange();
+    author();
 })
 
 class Book {
@@ -29,11 +33,8 @@ class Book {
 }
 
 function productDetails(){
-    document.getElementById("productDetails").addEventListener("click", theEyeOfTheWorld.createProductList(), false);
+    document.getElementById("ProductDetails").addEventListener("load", theEyeOfTheWorld.createProductList(), false);
 }
-document.addEventListener("DOMContentLoaded", function(){
-    productDetails();
-})
 
 
 class ProductDetails extends Book {
@@ -96,9 +97,10 @@ class ProductDetails extends Book {
 }
 
 function author(){
-    var a = document.getElementById("authorButton");
-    a.addEventListener("click", createAuthorDetails);
+    document.getElementById("authordiv").addEventListener("load", authorBook.createAuthorDetails(), false);
 }
+
+
 
 class AuthorDetails extends Book{
     constructor(name, author, series, birthdate){
@@ -112,21 +114,29 @@ class AuthorDetails extends Book{
             var authorText2 = document.createTextNode("He was born in Charleston, South Carolina. He learnt how to read when he was four, aided by his brother who was twelve years older. Robert has served in the U.S. Army, and he began writing in 1977. 13 years after he started writing, he released the first book in his bestseller The Wheel of Time.");
             p.appendChild(authorText);
             p.appendChild(authorText2);
-            document.getElementById("openAuthor").appendChild(p);
+            document.getElementById("authordiv").appendChild(p);
         };
     }
 }
 
-function sectionChange(){
+function amazonWindowChange(){
     document.getElementById("openAmazon").addEventListener("click", amazonInNewTab);
 }
-document.addEventListener("DOMContentLoaded", function(){
-    sectionChange();
-})
+
+function authorWindowChange(){
+    document.getElementById("authorBio").addEventListener("click", authorInNewTab);
+}
+
 
 function amazonInNewTab(){
     var amazonUrl = "https://www.amazon.com/Eye-World-Wheel-Time-Book/dp/0812511816";
     var win = window.open(amazonUrl, "_blank");
+    win.focus();
+}
+
+function authorInNewTab(){
+    var authorUrl = "author.html";
+    var win = window.open(authorUrl, "_blank");
     win.focus();
 }
 
