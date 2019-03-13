@@ -1,6 +1,6 @@
 // Het vullen van de select menu
 function initialize() {
-    var sel = document.getElementById('element-select');
+    var sel = document.getElementById('elementSelect');
 
     var body = document.getElementsByTagName("body");
     var bodyElement = createOption(body[0].localName);
@@ -42,7 +42,7 @@ function changeAppearance(element) {
 
 // Pakt value van geselecteerde optie in menu 1
 function getElementsToChange() {
-    var elementNameToChange = document.getElementById('element-select').value;
+    var elementNameToChange = document.getElementById('elementSelect').value;
     var elementsToChange = document.getElementsByTagName(elementNameToChange);
     return elementsToChange;
 }
@@ -51,7 +51,7 @@ function getElementsToChange() {
 function changeBackgroundColor() {
     var elementsToChange = getElementsToChange();
     for (var index = 0; index < elementsToChange.length; index++) {
-        elementsToChange[index].style.backgroundColor = document.getElementById('colorpicker').value;
+        elementsToChange[index].style.backgroundColor = document.getElementById('colorPicker').value;
     }
 }
 
