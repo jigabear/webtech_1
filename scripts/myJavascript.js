@@ -1,7 +1,9 @@
+//Allow the title and short information about the book to be displayed on the info page.
 function book() {
     document.getElementById("bookDetails").addEventListener("load", eyeOfTheWorld.showInfo(), false);
     document.getElementById("bookDetails").addEventListener("load", wheelOfTime.showBookTitle(), true);
 }
+//Wait for all of the DOM to be loaded before executing functions.
 document.addEventListener("DOMContentLoaded", function() {
     book();
     productDetails();
@@ -10,11 +12,13 @@ document.addEventListener("DOMContentLoaded", function() {
     author();
 })
 
+//ES6 Class with the book and its properties.
 class Book {
     constructor(name, author) {
         this.name = name;
         this.author = author;
 
+        //Create a paragraph containing information about the book.
         this.showInfo = function() {
             var para = document.createElement("P");
             var t = document.createTextNode(this.name + " was written by " + this.author + ". The Eye of The World is the first book in the The Wheel of Time series. It debuted in 1990, and it has been first on the list of New York Times bestselling authors.");
@@ -22,6 +26,7 @@ class Book {
             document.getElementById("bookDetails").appendChild(para);
         };
 
+        //Create a heading showing the title of the series.
         this.showBookTitle = function() {
             var titleHeader = document.createElement("h1");
             var titleText = document.createTextNode(this.name);
@@ -32,11 +37,12 @@ class Book {
     }
 }
 
+//Generate the product details section of the info page.
 function productDetails() {
     document.getElementById("ProductDetails").addEventListener("load", theEyeOfTheWorld.createProductList(), false);
 }
 
-
+//ES6 Class with the product details of the first book in the series.
 class ProductDetails extends Book {
     constructor(name, author, genre, pages, isbn, publisher) {
         super(name, author);
@@ -96,12 +102,13 @@ class ProductDetails extends Book {
     }
 }
 
+//Function to generate the author bio section on the info page.
 function author() {
     document.getElementById("authordiv").addEventListener("load", authorBook.createAuthorDetails(), false);
 }
 
 
-
+//ES6 Class with the author details.
 class AuthorDetails extends Book {
     constructor(name, author, series, birthdate) {
         super(name, author);
@@ -119,27 +126,31 @@ class AuthorDetails extends Book {
     }
 }
 
+//Function to generate the link to redirect the user to the Amazon page for the first book.
 function amazonWindowChange() {
     document.getElementById("openAmazon").addEventListener("click", amazonInNewTab);
 }
 
+//Function to generate the link to redirect the user to the Author page upon pressing on the Author bio title.
 function authorWindowChange() {
     document.getElementById("authorBio").addEventListener("click", authorInNewTab);
 }
 
-
+//Function to link to Amazon webpage.
 function amazonInNewTab() {
     var amazonUrl = "https://www.amazon.com/Eye-World-Wheel-Time-Book/dp/0812511816";
     var win = window.open(amazonUrl, "_blank");
     win.focus();
 }
 
+//Function to link to author page.
 function authorInNewTab() {
     var authorUrl = "author.html";
     var win = window.open(authorUrl, "_parent");
     win.focus();
 }
 
+//Instantiating the ES6 classes to use them.
 wheelOfTime = new Book("The Wheel of Time", "Robert Jordan");
 eyeOfTheWorld = new Book("The Eye of The World", "Robert Jordan");
 theEyeOfTheWorld = new ProductDetails("The Eye of The World", "Robert Jordan", "Fantasy Novel", "832 (Paperback)", "978-0812511819", "Tor Fantasy, November 15, 1990");
