@@ -134,17 +134,17 @@ td {
     margin-left: 34px;
 }
 
-#article { 
+#article {
     display: block;
-  }
+}
 
-#aside { 
+#aside {
     display: block;
-  }
+}
 
-#section { 
+#section {
     display: block;
-  }
+}
 
 #reskinLink h1 {
     cursor: pointer;
@@ -157,7 +157,7 @@ td {
 }
 
 #bookInfo {
-    width:100%
+    width: 100%
 }
 
 #author {
